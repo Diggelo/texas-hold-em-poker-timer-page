@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Privacy Policy – The Flying Mouse</title>
-  <meta name="description" content="Privacy Policy for The Flying Mouse." />
+  <title>Privacy Policy – Texas Hold’em Poker Timer</title>
+  <meta name="description" content="Privacy Policy for Texas Hold’em Poker Timer." />
 
   <!-- Favicon (uses your app icon) -->
-  <link rel="icon" href="media/The Flying Mouse icon.png" type="image/png">
+  <link rel="icon" href="media/icon.png" type="image/png">
 
   <style>
     :root{
@@ -31,18 +31,6 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color: var(--text);
       background-color: var(--bg);
-    }
-    
-    body::after{
-      content:"";
-      position: fixed;
-      inset: 0;
-      background-image: url("media/Background.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -2;
-      pointer-events: none;
     }
 
     body::before{
@@ -101,9 +89,7 @@
     }
     .icon img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-    .titles{
-      min-width: 0;
-    }
+    .titles{ min-width: 0; }
     .kicker{
       color: var(--muted2);
       font-size: 12px;
@@ -124,8 +110,8 @@
     .btn{
       display: inline-flex;
       align-items: center;
-      justify-content: center; /* ← dette er nøkkelen */
-      text-align: center;      /* ← sikrer tekstsentralisering */
+      justify-content: center;
+      text-align: center;
       border: 1px solid var(--border);
       background: rgba(255,255,255,.08);
       border-radius: 14px;
@@ -135,7 +121,6 @@
       min-height: 44px;
       text-decoration:none;
     }
-
     .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.11); text-decoration:none; }
     .btn strong{ font-weight: 750; }
     .btn .muted{ color: var(--muted2); font-size: 13px; }
@@ -152,12 +137,11 @@
     }
     .logoRow img{
       width: 100%;
-      max-width: 360px; /* mindre logo */
+      max-width: 420px;
       height: auto;
       display:block;
       filter: drop-shadow(0 14px 40px rgba(0,0,0,.55));
     }
-
 
     h2{
       margin: 8px 0 10px;
@@ -179,18 +163,19 @@
       padding: 14px 14px;
       margin-top: 14px;
       color: var(--muted);
+      text-align:left;
+      max-width: 80ch;
+      margin-left:auto;
+      margin-right:auto;
     }
 
-   .links{
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 50 % / 50 % */
-    gap: 10px;
-    margin-top: 14px;
+    .links{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
     }
-
-    .links .btn{
-      width: 100%;
-    }
+    .links .btn{ width: 100%; }
 
     footer{
       margin-top: 18px;
@@ -213,12 +198,9 @@
         flex-direction: column;
         align-items: stretch;
       }
-      .btn{
-        width: 100%;
-      }
-      h1{
-        white-space: normal;
-      }
+      .btn{ width: 100%; }
+      h1{ white-space: normal; }
+      .links{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -230,15 +212,15 @@
       <div class="header">
         <div class="brand">
           <div class="icon">
-            <img src="media/The Flying Mouse icon.png" alt="The Flying Mouse app icon">
+            <img src="media/icon.png" alt="Texas Hold’em Poker Timer app icon">
           </div>
           <div class="titles">
-            <div class="kicker">The Flying Mouse</div>
+            <div class="kicker">Texas Hold’em Poker Timer</div>
             <h1>Privacy Policy</h1>
           </div>
         </div>
 
-        <a class="btn" href="https://forms.gle/muaM9myPhvrGbtym7" target="_blank" rel="noopener">
+        <a class="btn" href="https://forms.gle/9Q4PDrDExeCHreUB6" target="_blank" rel="noopener">
           <strong>Contact the developer</strong>
           <span class="muted">Google Form</span>
         </a>
@@ -246,25 +228,28 @@
 
       <div class="content">
         <div class="logoRow">
-          <img src="media/The Flying Mouse Logo.png" alt="The Flying Mouse logo">
+          <img src="media/logo-banner.png" alt="Texas Hold’em Poker Timer banner">
         </div>
 
         <h2>Policy</h2>
-        <p>The Flying Mouse is a simple arcade game that does not require account creation or sign-in.</p>
-        <p>The app uses Google AdMob to display optional rewarded advertisements. No ads are shown to users who purchase the Premium upgrade.</p>
-        <p>The developer does not collect, store, or process personal user data. Third-party services (Google AdMob) may collect device identifiers and usage data for advertising and analytics purposes.</p>
+
+        <p>Texas Hold’em Poker Timer is a tournament timer app for Apple TV.</p>
+        <p>The app does not require account creation or sign-in.</p>
+
+        <p><strong>Data collection:</strong> The developer does not collect, store, or sell personal data.</p>
+        <p><strong>Tracking:</strong> The app does not use advertising tracking.</p>
 
         <div class="callout">
-          For more information about how Google uses data, see:
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
+          <strong>Note:</strong> This policy may be updated if the app later adds optional services such as analytics,
+          crash reporting, or third-party integrations.
         </div>
 
         <div class="links">
           <a class="btn" href="index.html">
             <strong>Back to home</strong>
-            <span class="muted">The Flying Mouse</span>
+            <span class="muted">Texas Hold’em Poker Timer</span>
           </a>
-          <a class="btn" href="https://forms.gle/muaM9myPhvrGbtym7" target="_blank" rel="noopener">
+          <a class="btn" href="https://forms.gle/9Q4PDrDExeCHreUB6" target="_blank" rel="noopener">
             <strong>Contact the developer</strong>
             <span class="muted">Google Form</span>
           </a>
@@ -275,9 +260,9 @@
     <footer>
       <div class="footerLinks">
         <a href="index.html">Home</a>
-        <a href="https://forms.gle/muaM9myPhvrGbtym7" target="_blank" rel="noopener">Contact</a>
+        <a href="https://forms.gle/9Q4PDrDExeCHreUB6" target="_blank" rel="noopener">Contact</a>
       </div>
-      <div>© <span id="year"></span> The Flying Mouse</div>
+      <div>© <span id="year"></span> Texas Hold’em Poker Timer</div>
     </footer>
 
   </div>

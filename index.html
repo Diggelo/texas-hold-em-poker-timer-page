@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Flying Mouse</title>
-  <meta name="description" content="One-tap arcade. Short runs. One more try." />
+  <title>Texas Hold’em Poker Timer</title>
+  <meta name="description" content="A clean poker tournament timer for Apple TV. Blinds, breaks, and structure editing—built for the remote." />
 
   <!-- Favicon (uses your app icon) -->
-  <link rel="icon" href="media/The Flying Mouse icon.png" type="image/png">
+  <link rel="icon" href="media/icon.png" type="image/png">
 
   <style>
     :root{
@@ -34,19 +34,7 @@
       background-color: var(--bg);
     }
 
-    body::after{
-      content:"";
-      position: fixed;
-      inset: 0;
-      background-image: url("media/Background.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -2;
-      pointer-events: none;
-    }
-
-    /* Darker overlay to keep content readable */
+    /* Keep the same “Flying Mouse” vibe, but without external background images */
     body::before{
       content:"";
       position: fixed;
@@ -125,21 +113,20 @@
 
     .heroLogo{
       width: 100%;
-      max-width: 520px;
+      max-width: 560px;
       height: auto;
       display:block;
       margin-left: auto;
       filter: drop-shadow(0 18px 55px rgba(0,0,0,.55));
     }
 
-    /* Spacer between hero and leaderboard: Mouse left, Cheese right */
+    /* Spacer line with tvOS logo */
     .spacer{
       margin-top: 22px;
       margin-bottom: 22px;
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap: 16px;
+      justify-content:center;
       padding: 10px 6px;
       position: relative;
     }
@@ -153,29 +140,21 @@
       pointer-events:none;
       opacity:.9;
     }
-    .spacer .mouse,
-    .spacer .cheese{
+    .spacer img{
       position: relative;
       z-index: 1;
       height: auto;
+      width: 180px;
       filter: drop-shadow(0 14px 30px rgba(0,0,0,.55));
       user-select:none;
       pointer-events:none;
-    }
-    .spacer .mouse{
-      width: 120px;
-      transform: rotate(-6deg);
-    }
-    /* IMPORTANT: set cheese size explicitly (prevents it from growing) */
-    .spacer .cheese{
-      width: 30px;              /* desktop size */
-      transform: rotate(10deg);
+      background: rgba(0,0,0,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 999px;
+      padding: 10px 14px;
     }
 
-    section{
-      padding: 22px;
-      margin-top: 0;
-    }
+    section{ padding: 22px; margin-top: 0; }
 
     h2{ margin:0 0 10px; font-size: 22px; letter-spacing: -.01em; }
     .sub{ margin: 0 0 14px; color: var(--muted); line-height:1.6; max-width: 75ch; }
@@ -187,6 +166,7 @@
       border: 1px solid var(--border);
       background: rgba(255,255,255,.06);
       min-height: 150px;
+      text-align:center;
     }
 
     .num{
@@ -205,23 +185,23 @@
     .card h3{ margin:0 0 8px; font-size: 16px; }
     .card p{ margin:0; color: var(--muted); line-height:1.6; }
 
-    /* Leaderboard block - fully centered (text + pills) */
-    .leaderboard{
+    /* Centered info block */
+    .infoBlock{
       margin-top: 22px;
       padding: 22px;
       display:grid;
       grid-template-columns: 1fr;
       gap: 10px;
       text-align: center;
-      justify-items: center;   /* centers children in the grid */
+      justify-items: center;
     }
-    .leaderboard .sub{
+    .infoBlock .sub{
       margin: 0;
       max-width: 75ch;
     }
-    .leaderboard .mini{
+    .mini{
       display:flex;
-      justify-content:center;  /* centers the pills row */
+      justify-content:center;
       align-items:center;
       gap: 10px;
       flex-wrap:wrap;
@@ -240,23 +220,6 @@
       background: rgba(255,255,255,.06);
       color: var(--muted);
       font-size: 13px;
-    }
-
-    /* Features: center heading + sub + cards content */
-    #features{
-      text-align: center;
-    }
-    #features .sub{
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #features .grid{
-      justify-items: center;
-    }
-    #features .card{
-      text-align: center;
-      width: 100%;
-      max-width: 420px; /* prevents odd-looking narrow cards when centered */
     }
 
     footer{
@@ -279,10 +242,8 @@
       .hero{ grid-template-columns: 1fr; }
       h1{ font-size: 34px; }
       .grid{ grid-template-columns: 1fr; }
-      .heroLogo{ margin-left: 0; max-width: 420px; }
-
-      .spacer .mouse{ width: 96px; }
-      .spacer .cheese{ width: 24px; } /* fixed 24px on small screens */
+      .heroLogo{ margin-left: 0; max-width: 520px; }
+      .spacer img{ width: 160px; }
     }
   </style>
 </head>
@@ -295,84 +256,90 @@
       <div>
         <div class="brand">
           <div class="icon">
-            <img src="media/The Flying Mouse icon.png" alt="The Flying Mouse app icon">
+            <img src="media/icon.png" alt="Texas Hold’em Poker Timer app icon">
           </div>
           <div>
             <div style="color:var(--muted2); font-size:12px; letter-spacing:.12em; text-transform:uppercase;">
-              iOS game
+              Apple TV app (tvOS)
             </div>
-            <h1>The Flying Mouse</h1>
+            <h1>Texas Hold’em Poker Timer</h1>
           </div>
         </div>
 
         <p class="tagline">
-          One-tap arcade where every run is fast, difficult, and addictive.
+          A clean tournament timer built for the Apple TV remote—blinds, breaks, and structure editing in one place.
         </p>
 
         <div class="cta">
-          <a class="btn" href="https://apps.apple.com/no/app/the-flying-mouse/id6756983960" target="_blank" rel="noopener">
-            <strong>Download</strong> <span class="muted">on App Store</span>
+          <!-- Placeholder: replace href when App Store URL is ready -->
+          <a class="btn" href="#" aria-disabled="true" onclick="return false;">
+            <strong>Download</strong> <span class="muted">on App Store (soon)</span>
           </a>
 
-          <a class="btn"
-             href="https://docs.google.com/forms/d/e/1FAIpQLSf2NsVEUXexIF_5BIfLlNd0K2vd2PKMCkucknTrWHN0nUtmXw/viewform"
-             target="_blank" rel="noopener">
-            <strong>Feedback</strong> <span class="muted">Report a bug / send a suggestion</span>
+          <a class="btn" href="https://forms.gle/9Q4PDrDExeCHreUB6" target="_blank" rel="noopener">
+            <strong>Contact</strong> <span class="muted">Report a bug / send feedback</span>
           </a>
 
           <a class="btn" href="privacy.html">
             <strong>Privacy Policy</strong> <span class="muted">Read more</span>
           </a>
+
+          <a class="btn" href="https://apps.apple.com/us/developer/joachim-svendsr%C3%B8d/id1864044398" target="_blank" rel="noopener">
+            <strong>See my other apps</strong>
+            <span class="muted">on the App Store</span>
+          </a>
+
         </div>
       </div>
 
       <div>
-        <img class="heroLogo" src="media/The Flying Mouse Logo.png" alt="The Flying Mouse logo">
+        <img class="heroLogo" src="media/logo-banner.png" alt="Texas Hold’em Poker Timer banner">
       </div>
     </div>
 
-    <!-- SPACER WITH MOUSE + CHEESE -->
+    <!-- SPACER WITH tvOS LOGO -->
     <div class="spacer" aria-hidden="true">
-      <img class="mouse" src="media/Mouse.png" alt="">
-      <img class="cheese" src="media/Cheese.png" alt="">
+      <img src="media/tvos-logo.png" alt="">
     </div>
 
-    <!-- LEADERBOARD BLOCK -->
-    <div class="panel leaderboard">
-      <h2>Leaderboards & Competition</h2>
+    <!-- INFO BLOCK -->
+    <div class="panel infoBlock">
+      <h2>Tournament control from the couch</h2>
       <p class="sub">
-        Compare your best runs on the Game Center leaderboards and compete with friends—or players worldwide—for the top spot.
+        Designed for live poker nights: keep the pace, stay consistent, and let the TV do the timing.
       </p>
-      <div class="mini" aria-label="Leaderboard highlights">
-        <span class="pill">Global ranking</span>
-        <span class="pill">Friend competition</span>
-        <span class="pill">Beat your personal best</span>
+      <div class="mini" aria-label="Highlights">
+        <span class="pill">Blinds levels</span>
+ 
+        <span class="pill">Breaks</span>
+        <span class="pill">Players remaining</span>
+        <span class="pill">Edit structure</span>
       </div>
     </div>
 
     <!-- FEATURES -->
     <div class="panel" style="margin-top:22px;">
-      <section id="features">
-        <h2>Why You’ll Love It</h2>
-        <p class="sub">Quick runs. Simple control. Pure timing.</p>
+      <section id="features" style="text-align:center;">
+        <h2>Key features</h2>
+        <p class="sub" style="margin-left:auto; margin-right:auto;">Simple to run. Flexible when you need it.</p>
 
-        <div class="grid">
-          <div class="card">
+        <div class="grid" style="justify-items:center;">
+          <div class="card" style="width:100%; max-width:420px;">
             <div class="num">1</div>
-            <h3>One-Tap Control</h3>
-            <p>Tap to fly. Easy to start, hard to master.</p>
+            <h3>Blinds & timer</h3>
+            <p>Run your tournament with clear levels and a big, readable countdown.</p>
           </div>
 
-          <div class="card">
+          <div class="card" style="width:100%; max-width:420px;">
             <div class="num">2</div>
-            <h3>Skill-Based Runs</h3>
-            <p>Every mistake matters. Learn patterns, push your best.</p>
+            <h3>Breaks</h3>
+            <p>Scheduled pauses that keep the room in sync—no “how long left?” chaos.</p>
           </div>
 
-          <div class="card">
+          <div class="card" style="width:100%; max-width:420px;">
             <div class="num">3</div>
-            <h3>Cheese-Chasing Goal</h3>
-            <p>Catch cheese, stay alive, and go for a longer run.</p>
+            <h3>Structure editing</h3>
+            <p>Adjust levels and reset to defaults when needed—plus a clear “danger zone” for destructive actions.</p>
           </div>
         </div>
       </section>
@@ -381,10 +348,10 @@
     <footer>
       <div class="footerLinks">
         <a href="privacy.html">Privacy Policy</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2NsVEUXexIF_5BIfLlNd0K2vd2PKMCkucknTrWHN0nUtmXw/viewform"
-           target="_blank" rel="noopener">Feedback</a>
+        <a href="https://apps.apple.com/us/developer/joachim-svendsr%C3%B8d/id1864044398" target="_blank" rel="noopener"> Other apps</a>
+        <a href="https://forms.gle/9Q4PDrDExeCHreUB6" target="_blank" rel="noopener">Contact</a>
       </div>
-      <div>© <span id="year"></span> The Flying Mouse</div>
+      <div>© <span id="year"></span> Texas Hold’em Poker Timer</div>
     </footer>
   </div>
 
